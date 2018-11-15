@@ -8,7 +8,7 @@
     "target": "es5",
     "baseUrl": ".",
     "paths": {
-      "tslib": ["./node_modules/saby-typescript/es5"]
+      "tslib": ["./es5"]
     }
   }
 }
