@@ -1,4 +1,4 @@
-# The environment for TypeScript of the Saby
+# Saby's environment for TypeScript
 
 It contains setups and patterns to use with TypeScript in Saby such as recommended version, configuartion files (tsconfig.json and tslib.js) and instructions.
 
