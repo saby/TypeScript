@@ -4,12 +4,12 @@ const path = require('path');
 const logger = console;
 const source = __dirname;
 const target = process.cwd();
-const files = ['tsconfig.json', 'tslib.json'];
+const files = ['tsconfig.json', 'tslib.js'];
 
 files.forEach((file) => {
    const sourceFile = path.join(source, file);
    const targetFile = path.join(target, file);
-   let message = `copy ${sourceFile} to ${targetFile}`;
+   let message = `copying ${sourceFile} to ${targetFile}`;
 
    try {
       fs.copyFileSync(sourceFile, targetFile);
