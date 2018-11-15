@@ -7,7 +7,7 @@
     "moduleResolution": "classic",
     "target": "es5",
     "paths": {
-      "tslib": ["./tslib"]
+      "tslib": ["./node_modules/saby-typescript/es5"]
     }
   }
 }
