@@ -6,6 +6,7 @@
     "module": "amd",
     "moduleResolution": "classic",
     "target": "es5",
+    "baseUrl": ".",
     "paths": {
       "tslib": ["./node_modules/saby-typescript/es5"]
     }
