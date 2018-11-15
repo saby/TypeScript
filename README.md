@@ -1,16 +1,16 @@
 # Saby's environment for TypeScript
 
-This environment contains setups and patterns to use with [TypeScript](https://www.typescriptlang.org/) in Saby such as recommended version, preferred configuartion files (`tsconfig.json` and `tslib.js`) and instructions.
+This environment contains basic setups and patterns to use with [TypeScript](https://www.typescriptlang.org/) in Saby such as recommended version, preferred configuartion files (`tsconfig.json` and `tslib.js`) and instructions.
 
 ## How to include in your own project
 
-**First**. Your project must [follow npm architecture](https://docs.npmjs.com/cli/init). You need to [Node.js](https://nodejs.org/) being installed on your computer. The easiest first step to start is execute this command:
+**Firstly**. Your project must [follow npm architecture](https://docs.npmjs.com/cli/init). You need to [Node.js](https://nodejs.org/) being installed on your computer. The easiest first step to start is execute this command:
 ```bash
 npm init
 ```
-You have to answer to several simple questions. After that you'll have the new file `package.json` in your project.
+You have to answer several simple questions. After that you'll have the new file `package.json` in your project.
 
-**Second**. Add dependency of this package in your `package.json` file at section `dependencies` like this:
+**Secondly**. Add dependency in your `package.json` file at section `dependencies` like this:
 ```javascript
 "dependencies": {
   "saby-typescript": "git+https://github.com:saby/TypeScript.git#rc-x.x.xxx"
@@ -18,7 +18,7 @@ You have to answer to several simple questions. After that you'll have the new f
 ```
 You should replace `x.x.xxx` with actual version. For example, `3.18.700`. 
 
-**Third**. Also add a few scripts at section `scripts` like this:
+**Thirdly**. Also add a few scripts at section `scripts` like this:
 ```javascript
 "scripts": {
   "postinstall": "node node_modules/saby-typescript/install",
@@ -28,7 +28,7 @@ You should replace `x.x.xxx` with actual version. For example, `3.18.700`.
 
 It's almost ready now!
 
-**Fourth**. Just install your package dependencies using this command:
+**Fourthly**. Just install your package dependencies using this command:
 ```bash
 npm install
 ```
