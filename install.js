@@ -4,7 +4,7 @@ const path = require('path');
 const logger = console;
 const source = __dirname;
 const target = process.cwd();
-const files = ['tsconfig.json', 'tslib.js'];
+const files = ['tsconfig.json'];
 
 files.forEach((file) => {
    const sourceFile = path.join(source, file);

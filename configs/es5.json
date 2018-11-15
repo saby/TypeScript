@@ -6,8 +6,9 @@
     "module": "amd",
     "moduleResolution": "classic",
     "target": "es5",
+    "baseUrl": ".",
     "paths": {
-      "tslib": ["./tslib"]
+      "tslib": ["./es5"]
     }
   }
 }
