@@ -2,6 +2,9 @@
   "name": "saby-typescript",
   "version": "3.18.700",
   "description": "Saby's environment for TypeScript",
+  "bin": {
+    "saby-typescript": "./cli.js"
+  },
   "files": [
     "configs/*",
     "compile.js",
