@@ -2,20 +2,76 @@
 const fs = require('fs');
 const path = require('path');
 const logger = console;
+
+function unixify (str) {
+   return String(str).replace(/\\/g, '/');
+}
+
+function replaceTemplate(template, data) {
+   return String(template).replace(/\${([^}]+)}/, (match, name) => {
+      return name in data ? data[name] : '';
+   });
+}
+
+async function copyTemplate(source, target, data) {
+   try {
+      return await new Promise((resolve, reject) => {
+         fs.readFile(source, (err, buffer) => {
+            if (err) {
+               reject(err);
+            }
+
+            fs.writeFile(target, replaceTemplate(buffer, data), (err) => {
+               if (err) {
+                  reject(err);
+               }
+
+               resolve(String(buffer).length);
+            });
+         });
+      });
+   } catch (error) {
+      throw error;
+   }
+}
+
 const source = __dirname;
 const target = process.cwd();
-const files = ['tsconfig.json'];
 
-files.forEach((file) => {
-   const sourceFile = path.join(source, file);
-   const targetFile = path.join(target, file);
-   let message = `copying '${sourceFile}' to '${targetFile}'`;
+let relativeSource = unixify(path.relative(target, source));
+if (!relativeSource.startsWith('.')) {
+   relativeSource = './' + relativeSource;
+}
 
-   try {
-      fs.copyFileSync(sourceFile, targetFile);
+// Processing CLI arguments into options
+const options = {
+   tsconfig: 'tsconfig.json'
+};
+process.argv.slice(2).forEach(arg => {
+   const [name, value] = arg.split('=', 2);
+   switch (name) {
+      case '--tsconfig':
+         options.tsconfig = value;
+         break;
+   }
+});
+
+// Copy files with replace
+const config = {
+   nodePath: relativeSource
+};
+const files = {
+   'tsconfig.json': options.tsconfig
+};
+Object.keys(files).forEach((sourceFile) => {
+   const sourcePath = path.join(source, sourceFile);
+   const targetPath = path.join(target, files[sourceFile]);
+   let message = `copying '${sourcePath}' to '${targetPath}'`;
+
+   copyTemplate(sourcePath, targetPath, config).then(() => {
       logger.log(`${message}: success.`);
-   } catch (err) {
+   }).catch((err) => {
       logger.error(`${message}: fail.`);
       logger.error(err);
-   }
+   });
 });

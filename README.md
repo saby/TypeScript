@@ -1,6 +1,6 @@
 # Saby's environment for TypeScript
 
-This environment contains basic setups and patterns to use with [TypeScript](https://www.typescriptlang.org/) in Saby such as recommended version, preferred configuartion files (`tsconfig.json` and `tslib.js`) and instructions.
+This environment contains basic setups and patterns for [TypeScript](https://www.typescriptlang.org/) in Saby such as recommended version, preferred configuartion file `tsconfig.json` and this instruction.
 
 ## How to include in your own project
 
@@ -10,7 +10,7 @@ npm init
 ```
 You have to answer several simple questions. After that you'll have the new file `package.json` in your project.
 
-**Secondly**. Add dependency in your `package.json` file at section `dependencies` like this:
+**Secondly**. Add dependency in your `package.json` file at `dependencies` section like this:
 ```javascript
 "dependencies": {
   "saby-typescript": "git+https://github.com:saby/TypeScript.git#rc-x.x.xxx"
@@ -18,7 +18,7 @@ You have to answer several simple questions. After that you'll have the new file
 ```
 You should replace `x.x.xxx` with actual version. For example, `3.18.700`. 
 
-**Thirdly**. Also add a few scripts at section `scripts` like this:
+**Thirdly**. Also add a pair of scripts at `scripts` section like this:
 ```javascript
 "scripts": {
   "postinstall": "node node_modules/saby-typescript/install",
@@ -35,7 +35,7 @@ npm install
 
 ## How to use
 
-You've got a few new files in your project as result of previous command execute. There are `tsconfig.json` and `tslib.js`. These files are necessary to compile your `.ts` files to `.js` files. You can find out more information about them on [TypeScript site](https://www.typescriptlang.org/).
+You've got a new file `tsconfig.json` in your project as result of previous command execute. This file is necessary to compile your `.ts` files to `.js` files. You can find out more information about it on [TypeScript site](https://www.typescriptlang.org/).
 
 Now it's simply to compile your project manually using command line:
 ```bash
