@@ -1,6 +1,6 @@
 # Saby's environment for TypeScript
 
-This environment contains basic setups and patterns for [TypeScript](https://www.typescriptlang.org/) in Saby such as recommended version, preferred configuartion file `tsconfig.json` and this instruction.
+This environment provides basic setup for [TypeScript](https://www.typescriptlang.org/) under Saby such as recommended version, preferred configuration file and this instruction.
 
 ## How to include in your own project
 
@@ -21,8 +21,8 @@ You should replace `x.x.xxx` with actual version. For example, `3.18.700`.
 **Thirdly**. Also add a pair of scripts at `scripts` section like this:
 ```javascript
 "scripts": {
-  "postinstall": "node node_modules/saby-typescript/install",
-  "compile": "node compile"
+  "postinstall": "saby-typescript --install",
+  "compile": "tsc"
 }
 ```
 
@@ -35,11 +35,15 @@ npm install
 
 ## How to use
 
-You've got new files in your project as a result of previous command execute, there are `tsconfig.json` and `compile.js` These files are necessary to compile your `.ts` files to `.js` files. You can find out more information about `tsconfig.json` on [TypeScript site](https://www.typescriptlang.org/).
+You've got new file `tsconfig.json` in your project as a result of previous command execute. This file is necessary to compile your `.ts` files to `.js` files. You can find out more information about `tsconfig.json` on [TypeScript site](https://www.typescriptlang.org/).
 
 Now it's simply to compile your project manually using command line:
 ```bash
 npm run compile
+```
+or just:
+```bash
+tsc
 ```
 
 Of course you can setup an IDE you prefer to your convenience. It allows you compile `.ts` files automatically every time you change them.
