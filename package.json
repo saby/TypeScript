@@ -2,14 +2,9 @@
   "name": "saby-typescript",
   "version": "3.18.700",
   "description": "Saby's environment for TypeScript",
-  "files": [
-    "configs/*",
-    "compile.js",
-    "install.js",
-    "README.md",
-    "tsconfig.json",
-    "tslib.js"
-  ],
+  "bin": {
+    "saby-typescript": "./cli.js"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:saby/TypeScript.git"
