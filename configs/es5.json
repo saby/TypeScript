@@ -2,7 +2,7 @@
   "compilerOptions": {
     "alwaysStrict": true,
     "importHelpers": true,
-    "lib": ["es5", "es2015", "scripthost"],
+    "lib": ["dom", "es5", "es2015", "scripthost"],
     "module": "amd",
     "moduleResolution": "classic",
     "target": "es5",
