@@ -45,6 +45,7 @@ if (!relativeSource.startsWith('.')) {
 
 // Processing CLI arguments into options
 const options = {
+   compile: 'compile.js',
    tsconfig: 'tsconfig.json'
 };
 process.argv.slice(2).forEach(arg => {
@@ -52,6 +53,9 @@ process.argv.slice(2).forEach(arg => {
    switch (name) {
       case '--tsconfig':
          options.tsconfig = value;
+         break;
+      case '--compile':
+         options.compile = value;
          break;
    }
 });
@@ -61,6 +65,7 @@ const config = {
    nodePath: relativeSource
 };
 const files = {
+   'compile.js': options.compile,
    'tsconfig.json': options.tsconfig
 };
 Object.keys(files).forEach((sourceFile) => {

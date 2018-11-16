@@ -22,7 +22,7 @@ You should replace `x.x.xxx` with actual version. For example, `3.18.700`.
 ```javascript
 "scripts": {
   "postinstall": "node node_modules/saby-typescript/install",
-  "compile": "node node_modules/saby-typescript/compile"
+  "compile": "node compile"
 }
 ```
 
@@ -35,7 +35,7 @@ npm install
 
 ## How to use
 
-You've got a new file `tsconfig.json` in your project as result of previous command execute. This file is necessary to compile your `.ts` files to `.js` files. You can find out more information about it on [TypeScript site](https://www.typescriptlang.org/).
+You've got new files in your project as a result of previous command execute, there are `tsconfig.json` and `compile.js` These files are necessary to compile your `.ts` files to `.js` files. You can find out more information about `tsconfig.json` on [TypeScript site](https://www.typescriptlang.org/).
 
 Now it's simply to compile your project manually using command line:
 ```bash
