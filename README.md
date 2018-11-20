@@ -92,7 +92,7 @@ Use slash directive [amd-module](https://www.typescriptlang.org/docs/handbook/tr
 
 Compilator will put given module name into `define()` function for this module and everywhere this module is used for import in AMD representation.
 
-### How to import AMD module into TypeScript module
+### How to import AMD module into TypeScript module?
 
 Use `import` directive with [require()](export--and-import--require):
 
