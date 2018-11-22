@@ -12,7 +12,7 @@ You have to answer several simple questions. After that you'll have the new file
 
 **Secondly**. Add dependency in your `package.json` file at `dependencies` section like this:
 ```json
-"dependencies": {
+"devDependencies": {
   "saby-typescript": "git+https://github.com:saby/TypeScript.git#rc-x.x.xxx"
 }
 ```
@@ -21,7 +21,7 @@ You should replace `x.x.xxx` with actual version. For example, `3.18.700`.
 **Thirdly**. Also add a pair of scripts at `scripts` section like this:
 ```json
 "scripts": {
-  "postinstall": "saby-typescript --install",
+  "prepare": "saby-typescript --install",
   "compile": "tsc"
 }
 ```
@@ -94,7 +94,13 @@ Compilator will put given module name into `define()` function for this module a
 
 ### How to import AMD module into TypeScript module?
 
-Use `import` directive with [require()](export--and-import--require):
+Use `import` as usual:
+
+```typescript
+import * as someAmdModule from 'NameOf/Some/Amd/Module';
+```
+
+Or with directive with [require()](https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html#export--and-import--require):
 
 ```typescript
 import someAmdModule = require('NameOf/Some/Amd/Module');
