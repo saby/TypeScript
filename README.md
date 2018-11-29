@@ -37,6 +37,8 @@ npm install
 
 You've got new file `tsconfig.json` in your project as a result of previous command execute. This file is necessary to compile your `.ts` files to `.js` files. You can find out more information about `tsconfig.json` on [TypeScript site](https://www.typescriptlang.org/).
 
+This file need you only for check that your code compiles successfully. We strongly recommend to avoid change this file. Because your settings shouldn't be different with Saby's resources [build tool](https://github.com/saby/Builder) which uses the same ones.
+
 Just create silly module `test.ts`, for example:
 ```typescript
 class Foo {
@@ -81,6 +83,23 @@ Of course you can setup an IDE you prefer to your convenience. It allows you com
 For example, if you use WebStorm IDE you can read its own [developer's manual](https://www.jetbrains.com/help/webstorm/typescript-support.html).
 
 ## Tips and tricks
+
+### How to use another npm package as dependency
+
+Please read the documentation about [module resolution](https://www.typescriptlang.org/docs/handbook/module-resolution.html) principles.
+Basically you have two ways to use code from your dependencies with non-relative imports:
+
+1. For 'Node strategy' just use name of dependent npm package. For example, if you have dependency from [saby-types](https://github.com/saby/Types):
+
+    ```typescript
+    import Record from 'saby-types/entity';
+    ```
+
+2. For 'classic strategy' you have to create symlynk to this module in root of your project.  Name of the link should be the same as the module folder in [Saby project](https://github.com/saby). For example, the same dependency from [saby-types](https://github.com/saby/Types), make symlink to `node-modules/saby-types` folder as `Types` in root of your project and then use code like this:
+
+    ```typescript
+    import Record from 'Types/entity';
+    ```
 
 ### How to define custom name for AMD module?
 
