@@ -87,15 +87,15 @@ For example, if you use WebStorm IDE you can read its own [developer's manual](h
 ### How to use another npm package as dependency
 
 Please read the documentation about [module resolution](https://www.typescriptlang.org/docs/handbook/module-resolution.html) principles.
-Basically you have two ways to use code from your dependencies with non-relative imports:
+Basically you have two strategies to use code from your dependencies with non-relative imports:
 
-1. For 'classic strategy' you have to create symlynk to this module in root of your project.  Name of the link should be the same as the module folder in [Saby project](https://github.com/saby). For example, the same dependency from [saby-types](https://github.com/saby/Types), make symlink to `node-modules/saby-types` folder as `Types` in root of your project and then use code like this:
+1. For 'classic strategy' you have to create a symlink to this module in the root of your project.  Name of the link should be the same as the module folder in [Saby project](https://github.com/saby). For example, to import the same dependency [saby-types](https://github.com/saby/Types), make a symlink to `node-modules/saby-types` folder as `Types` in the root of your project and then use code like this:
 
     ```typescript
     import Record from 'Types/entity';
     ```
 
-1. For 'Node strategy' just use name of dependent npm package. For example, if you have dependency from [saby-types](https://github.com/saby/Types):
+1. For 'Node strategy' just use the name of the dependent npm package. For example, if you depend on [saby-types](https://github.com/saby/Types):
 
     ```typescript
     import Record from 'saby-types/entity';
