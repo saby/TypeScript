@@ -55,7 +55,7 @@ process.argv.slice(2).forEach(arg => {
          options.tsconfig = value;
          break;
       case '--tslint':
-         options.tsconfig = value;
+         options.tslint = value;
          break;
    }
 });
