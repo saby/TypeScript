@@ -45,7 +45,7 @@ if (!relativeSource.startsWith('.')) {
 
 // Processing CLI arguments into options
 const options = {
-   tsconfig: 'tsconfig.json'
+   tsconfig: 'tsconfig.json',
    tslint: 'tslint.json'
 };
 process.argv.slice(2).forEach(arg => {
@@ -65,7 +65,7 @@ const config = {
    nodePath: relativeSource
 };
 const files = {
-   'templates/tsconfig.json': options.tsconfig
+   'templates/tsconfig.json': options.tsconfig,
    'templates/tslint.json': options.tslint
 };
 Object.keys(files).forEach((sourceFile) => {
