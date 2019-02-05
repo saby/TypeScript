@@ -1,3 +1,3 @@
 {
-    "extends": "${nodePath}/tslint"
+    "extends": "saby-typescript/tslint"
 }
