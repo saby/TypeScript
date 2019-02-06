@@ -45,13 +45,17 @@ if (!relativeSource.startsWith('.')) {
 
 // Processing CLI arguments into options
 const options = {
-   tsconfig: 'tsconfig.json'
+   tsconfig: 'tsconfig.json',
+   tslint: 'tslint.json'
 };
 process.argv.slice(2).forEach(arg => {
    const [name, value] = arg.split('=', 2);
    switch (name) {
       case '--tsconfig':
          options.tsconfig = value;
+         break;
+      case '--tslint':
+         options.tslint = value;
          break;
    }
 });
@@ -61,7 +65,8 @@ const config = {
    nodePath: relativeSource
 };
 const files = {
-   'tsconfig.json': options.tsconfig
+   'templates/tsconfig.json': options.tsconfig,
+   'templates/tslint.json': options.tslint
 };
 Object.keys(files).forEach((sourceFile) => {
    const sourcePath = path.join(source, sourceFile);

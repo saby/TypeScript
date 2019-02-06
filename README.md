@@ -21,7 +21,7 @@ You should replace `x.x.xxx` with actual version. For example, `3.18.700`.
 **Thirdly**. Also add a pair of scripts at `scripts` section like this:
 ```json
 "scripts": {
-  "prepare": "saby-typescript --install",
+  "build": "saby-typescript --install",
   "compile": "tsc"
 }
 ```
@@ -33,11 +33,19 @@ It's almost ready now!
 npm install
 ```
 
+Also build your environment:
+```bash
+npm run build
+```
+
+
 ## How to use
 
 You've got new file `tsconfig.json` in your project as a result of previous command execute. This file is necessary to compile your `.ts` files to `.js` files. You can find out more information about `tsconfig.json` on [TypeScript site](https://www.typescriptlang.org/).
 
 You need this file only for check that is your code compiles successfully. We strongly recommend do not change this file because your settings shouldn't be different with Saby's resources [build tool](https://github.com/saby/Builder) which uses the same ones. In other words, you can make changes which add more restrictions but you can't make changes which add new features, experimental features or switch to another version of `tslib.js` file.
+
+Also you got file `tlint.json` in your project which contains rules for static check if your files are satisfied for code writing standards. Many IDEs are support those checks.
 
 Let's do a simple test. Just create silly module `test.ts`, for example:
 ```typescript
