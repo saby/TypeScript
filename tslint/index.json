@@ -47,17 +47,26 @@
             "severity": "warning"
         },
         "no-reference": true,
+        "no-return-await": true,
         "no-shadowed-variable": {
             "severity": "warning"
         },
+        "no-this-assignment": {
+          "severity": "warning"
+        },
         "no-unnecessary-type-assertion": true,
+        "no-unused-variable": true,
         "no-var-requires": true,
         "object-literal-key-quotes": [true, "as-needed"],
         "object-literal-sort-keys": false,
         "only-arrow-functions": [true, "allow-declarations", "allow-named-functions"],
         "ordered-imports": false,
         "prefer-for-of": false,
+        "prefer-object-spread": true,
         "promise-function-async": true,
+        "restrict-plus-operands": {
+          "severity": "warning"
+        },
         "quotemark": [true, "single", "avoid-escape", "avoid-template"],
         "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
         "typedef": [
