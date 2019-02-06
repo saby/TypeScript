@@ -1,16 +1,18 @@
 {
     "extends": "tslint:recommended",
     "rules": {
+        "ban-comma-operator": true,
         "ban-ts-ignore": {
             "severity": "warning"
         },
-        "ban-types": [true, 
+        "ban-types": [true,
             ["Deferred", "Use Promise instead."]
         ],
         "comment-format": {
             "options": "check-space",
             "severity": "warning"
         },
+        "indent": [true, "spaces", 3],
         "max-classes-per-file": [true, 5, "exclude-class-expressions"],
         "max-line-length": {
             "options": [120]
@@ -24,7 +26,7 @@
                "order": "fields-first"
             },
             "severity": "warning"
-         
+
         },
         "no-angle-bracket-type-assertion": {
             "severity": "warning"
