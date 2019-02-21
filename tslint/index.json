@@ -13,7 +13,7 @@
             "severity": "warning"
         },
         "indent": [true, "spaces", 3],
-        "max-classes-per-file": [true, 5, "exclude-class-expressions"],
+        "max-classes-per-file": [true, 7, "exclude-class-expressions"],
         "max-line-length": {
             "options": [120]
         },
@@ -23,7 +23,13 @@
         ],
         "member-ordering": {
             "options": {
-               "order": "fields-first"
+               "order": [
+                   "instance-field",
+                   "constructor",
+                   "instance-method",
+                   "static-field",
+                   "static-method"
+               ]
             },
             "severity": "warning"
 
