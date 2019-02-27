@@ -1,27 +1,27 @@
 {
-  "name": "saby-typescript",
-  "version": "19.200.0",
-  "description": "Saby's environment for TypeScript",
-  "bin": {
-    "saby-typescript": "./cli.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:saby/TypeScript.git"
-  },
-  "keywords": [
-    "saby",
-    "wasaby",
-    "typescript"
-  ],
-  "author": "Aleksey Maltsev",
-  "license": "MIT",
-  "dependencies": {
-    "tslint": "^5.12.1",
-    "typescript": "^3.0.3"
-  },
-  "devDependencies": {
-    "eslint": "^5.9.0",
-    "@tensor-corp/eslint-config": "^2.0.7"
-  }
+   "name": "saby-typescript",
+   "version": "19.210.0",
+   "description": "Saby's environment for TypeScript",
+   "bin": {
+      "saby-typescript": "./cli.js"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git@github.com:saby/TypeScript.git"
+   },
+   "keywords": [
+      "saby",
+      "wasaby",
+      "typescript"
+   ],
+   "author": "Aleksey Maltsev",
+   "license": "MIT",
+   "dependencies": {
+      "tslint": "^5.12.1",
+      "typescript": "^3.0.3"
+   },
+   "devDependencies": {
+      "eslint": "^5.9.0",
+      "@tensor-corp/eslint-config": "^2.0.7"
+   }
 }
