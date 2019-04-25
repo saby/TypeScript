@@ -12,7 +12,7 @@
             "options": "check-space",
             "severity": "warning"
         },
-        "indent": [true, "spaces", 3],
+        "indent": [true, "spaces", 4],
         "max-classes-per-file": [true, 7, "exclude-class-expressions"],
         "max-line-length": {
             "options": [120]
