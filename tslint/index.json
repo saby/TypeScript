@@ -60,8 +60,9 @@
         "no-this-assignment": {
           "severity": "warning"
         },
-        "no-unnecessary-type-assertion": true,
-        "no-unused-variable": true,
+        "no-unnecessary-type-assertion": {
+            "severity": "warning"
+        },
         "no-var-requires": true,
         "object-literal-key-quotes": [true, "as-needed"],
         "object-literal-sort-keys": false,
