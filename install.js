@@ -17,7 +17,12 @@ async function copyWithPostProcessing(source, target, config, data) {
    try {
       return await new Promise((resolve, reject) => {
          if (config.link) {
-            fs.symlinkSync(source, target);
+            fs.symlink(source, target, (err) => {
+               if (err) {
+                  reject(err);
+               }
+               resolve();
+            });
          } else {
             fs.readFile(source, (err, buffer) => {
                if (err) {
@@ -30,8 +35,7 @@ async function copyWithPostProcessing(source, target, config, data) {
                      if (err) {
                         reject(err);
                      }
-
-                     resolve(String(buffer).length);
+                     resolve();
                   }
                );
             });
@@ -45,7 +49,7 @@ async function copyWithPostProcessing(source, target, config, data) {
 // Processing CLI arguments into options
 const options = {
    tsconfig: {
-      source: 'config/es5.json',
+      source: 'configs/es5.json',
       target: 'tsconfig.json',
       link: true,
       default: true
@@ -57,7 +61,7 @@ const options = {
       default: true
    },
    tslint: {
-      source: 'templates/tslint.json',
+      source: 'tslint/index.json',
       target: 'tslint.json',
       link: true,
       default: true
@@ -107,6 +111,6 @@ Object.keys(options).forEach((param) => {
       logger.log(`${message}: success.`);
    }).catch((err) => {
       logger.error(`${message}: fail.`);
-      logger.error(err);
+      logger.error(err.message);
    });
 });
