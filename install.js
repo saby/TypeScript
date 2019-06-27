@@ -13,26 +13,29 @@ function replaceTemplate(template, data) {
    });
 }
 
-async function copyWithPostProcessing(source, target, data) {
+async function copyWithPostProcessing(source, target, config, data) {
    try {
       return await new Promise((resolve, reject) => {
-         fs.readFile(source, (err, buffer) => {
-            if (err) {
-               reject(err);
-            }
-
-            fs.writeFile(
-               target,
-               data ? replaceTemplate(buffer, data) : buffer,
-               (err) => {
-                  if (err) {
-                     reject(err);
-                  }
-
-                  resolve(String(buffer).length);
+         if (config.link) {
+            fs.symlinkSync(source, target);
+         } else {
+            fs.readFile(source, (err, buffer) => {
+               if (err) {
+                  reject(err);
                }
-            );
-         });
+               fs.writeFile(
+                  target,
+                  config.template ? replaceTemplate(buffer, data) : buffer,
+                  (err) => {
+                     if (err) {
+                        reject(err);
+                     }
+
+                     resolve(String(buffer).length);
+                  }
+               );
+            });
+         }
       });
    } catch (error) {
       throw error;
@@ -42,19 +45,21 @@ async function copyWithPostProcessing(source, target, data) {
 // Processing CLI arguments into options
 const options = {
    tsconfig: {
-      source: 'templates/tsconfig.json',
+      source: 'config/es5.json',
       target: 'tsconfig.json',
-      default: true,
-      template: true
+      link: true,
+      default: true
    },
    tslib: {
       source: 'tslib.js',
       target: 'tslib.js',
-      default: false
+      link: true,
+      default: true
    },
    tslint: {
       source: 'templates/tslint.json',
       target: 'tslint.json',
+      link: true,
       default: true
    }
 };
@@ -65,6 +70,11 @@ process.argv.slice(2).forEach(arg => {
       if (name in options) {
          options[name].target = value;
          options[name].default = true;
+
+         //Prevent copy for WS postinatsll script
+         if (name === 'tslib' && value === 'WS.Core/ext/tslib.js') {
+            options[name].link = false;
+         }
       }
    }
 });
@@ -78,7 +88,7 @@ if (!relativeSource.startsWith('.')) {
 }
 
 // Copy files with replace
-const config = {
+const data = {
    nodePath: relativeSource
 };
 
@@ -93,7 +103,7 @@ Object.keys(options).forEach((param) => {
    const targetPath = path.join(target, targetFile);
    let message = `copying '${sourcePath}' to '${targetPath}'`;
 
-   copyWithPostProcessing(sourcePath, targetPath, option.template ? config : null).then(() => {
+   copyWithPostProcessing(sourcePath, targetPath, option, data).then(() => {
       logger.log(`${message}: success.`);
    }).catch((err) => {
       logger.error(`${message}: fail.`);
