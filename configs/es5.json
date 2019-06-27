@@ -7,9 +7,6 @@
     "moduleResolution": "classic",
     "target": "es5",
     "baseUrl": ".",
-    "typeRoots" : ["node_modules/@types"],
-    "paths": {
-      "tslib": ["../tslib"]
-    }
+    "typeRoots" : ["node_modules/@types"]
   }
 }
