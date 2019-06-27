@@ -1,3 +1,0 @@
-{
-  "extends": "${nodePath}/configs/es5"
-}
