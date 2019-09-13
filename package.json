@@ -17,7 +17,7 @@
    "author": "Aleksey Maltsev",
    "license": "MIT",
    "dependencies": {
-      "tslint": "^5.12.1",
+      "tslint": "5.20.0",
       "typescript": "3.5.3"
    },
    "devDependencies": {
