@@ -10,7 +10,7 @@ interface ITagsNode extends ts.Node {
 }
 
 export class Rule extends Lint.Rules.AbstractRule {
-   public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {
+   apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {
       return this.applyWithWalker(new DocLibraryIncludesWalker(sourceFile, this.getOptions()));
    }
 }
@@ -23,20 +23,20 @@ class DocLibraryIncludesWalker extends Lint.RuleWalker {
                 const tags = child.jsDoc[0].tags;
 
                 let isLibary = false;
-                let includes = new Set();
+                const includes = new Set();
                 if (tags) {
-                    tags.forEach(tag => {
-                        if (tag.tagName.escapedText == 'library') {
+                    tags.forEach((tag) => {
+                        if (tag.tagName.escapedText === 'library') {
                             isLibary = true;
                         }
 
-                        if (tag.tagName.escapedText == 'include') {
+                        if (tag.tagName.escapedText === 'include') {
                             this.addFailure(this.createFailure(tag.getStart(), tag.getWidth(), 'Tag @include is not supported. Do you mean tag @includes?'));
                         }
 
-                        if (tag.tagName.escapedText == 'includes') {
+                        if (tag.tagName.escapedText === 'includes') {
                             const parts = tag.comment.split(' ');
-                            if (parts.length != 2) {
+                            if (parts.length !== 2) {
                                 this.addFailure(this.createFailure(tag.getStart(), tag.getWidth(), 'Tag @includes has incorrect format. Usage: @includes Alias ClassName'));
                             }
                             const canonizedTag = parts.join(' ');

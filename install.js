@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const logger = console;
 
-function unixify (str) {
+function unixify(str) {
    return String(str).replace(/\\/g, '/');
 }
 
