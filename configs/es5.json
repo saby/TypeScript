@@ -7,6 +7,11 @@
     "moduleResolution": "classic",
     "target": "es5",
     "baseUrl": ".",
-    "typeRoots" : ["node_modules/@types"]
+    "typeRoots" : ["node_modules/@types"],
+    "paths": {
+      "Core/*": ["WS.Core/core/*"],
+      "Lib/*": ["WS.Core/lib/*"],
+      "Transport/*": ["WS.Core/transport/*"]
+    }
   }
 }
