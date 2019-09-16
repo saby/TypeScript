@@ -75,7 +75,7 @@ process.argv.slice(2).forEach(arg => {
          options[name].target = value;
          options[name].default = true;
 
-         //Prevent copy for WS postinatsll script
+         // Prevent copy for WS postinatsll script
          if (name === 'tslib' && value === 'WS.Core/ext/tslib.js') {
             options[name].link = false;
          }
