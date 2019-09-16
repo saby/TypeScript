@@ -61,7 +61,7 @@ const options = {
       default: true
    },
    tslint: {
-      source: 'tslint/index.json',
+      source: 'tslint/export.json',
       target: 'tslint.json',
       link: true,
       default: true

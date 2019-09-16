@@ -1,6 +1,6 @@
 {
     "extends": "tslint:recommended",
-    "rulesDirectory": ["./custom-rules/"],
+    "rulesDirectory": "./custom-rules/",
     "jsRules": true,
     "rules": {
         "doc-library-includes": true,
