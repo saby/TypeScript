@@ -16,12 +16,12 @@
    ],
    "author": "Aleksey Maltsev",
    "license": "MIT",
+   "scripts": {
+       "postinstall": "tsc -p tslint/custom-rules"
+   },
    "dependencies": {
+      "@types/node": "12.7.5",
       "tslint": "5.20.0",
       "typescript": "3.5.3"
-   },
-   "devDependencies": {
-      "eslint": "^5.9.0",
-      "@tensor-corp/eslint-config": "^2.0.7"
    }
 }
