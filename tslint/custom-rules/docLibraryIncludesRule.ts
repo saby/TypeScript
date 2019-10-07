@@ -35,7 +35,7 @@ class DocLibraryIncludesWalker extends Lint.RuleWalker {
                         }
 
                         if (tag.tagName.escapedText === 'includes') {
-                            const parts = tag.comment.split(' ');
+                            const parts = (tag.comment || '').split(' ');
                             if (parts.length !== 2) {
                                 this.addFailure(this.createFailure(tag.getStart(), tag.getWidth(), 'Tag @includes has incorrect format. Usage: @includes Alias ClassName'));
                             }
