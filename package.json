@@ -1,6 +1,6 @@
 {
    "name": "saby-typescript",
-   "version": "19.700.0",
+   "version": "19.710.0",
    "description": "Saby's environment for TypeScript",
    "bin": {
       "saby-typescript": "./cli.js"
@@ -17,7 +17,7 @@
    "author": "Aleksey Maltsev",
    "license": "MIT",
    "scripts": {
-       "postinstall": "tsc -p tslint/custom-rules"
+      "postinstall": "tsc -p tslint/custom-rules"
    },
    "dependencies": {
       "@types/node": "12.7.5",
