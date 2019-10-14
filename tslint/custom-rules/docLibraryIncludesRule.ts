@@ -39,12 +39,12 @@ class DocLibraryIncludesWalker extends Lint.RuleWalker {
                             if (parts.length !== 2) {
                                 this.addFailure(this.createFailure(tag.getStart(), tag.getWidth(), 'Tag @includes has incorrect format. Usage: @includes Alias ClassName'));
                             }
-                            const canonizedTag = parts.join(' ');
 
-                            if (isLibary && includes.has(canonizedTag)) {
+                            const includeName = parts[0];
+                            if (isLibary && includes.has(includeName)) {
                                 this.addFailure(this.createFailure(tag.getStart(), tag.getWidth(), `Tag @includes '${tag.comment}' is not unique in this library. Check all includes`));
                             }
-                            includes.add(canonizedTag);
+                            includes.add(includeName);
                         }
                     });
                 }
