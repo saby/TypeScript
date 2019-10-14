@@ -3,9 +3,7 @@
    "version": "19.710.0",
    "description": "Saby's environment for TypeScript",
    "bin": {
-      "saby-typescript": "./cli.js",
-      "tsc": "./node_modules/typescript/bin/tsc",
-      "tsserver": "./node_modules/typescript/bin/tsserver"
+      "saby-typescript": "./cli.js"
    },
    "repository": {
       "type": "git",
