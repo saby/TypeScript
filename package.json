@@ -17,7 +17,7 @@
    "author": "Aleksey Maltsev",
    "license": "MIT",
    "scripts": {
-      "postinstall": "./node_modules/typescript/bin/tsc -p tslint/custom-rules"
+      "postinstall": "tsc -p tslint/custom-rules"
    },
    "dependencies": {
       "@types/node": "12.7.5",
