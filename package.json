@@ -4,7 +4,8 @@
    "description": "Saby's environment for TypeScript",
    "bin": {
       "saby-typescript": "./cli.js",
-      "tsc": "./node_modules/typescript/bin/tsc"
+      "tsc": "./node_modules/typescript/bin/tsc",
+      "tsserver": "./node_modules/typescript/bin/tsserver"
    },
    "repository": {
       "type": "git",
