@@ -3,7 +3,7 @@
     "alwaysStrict": true,
     "baseUrl": ".",
     "importHelpers": true,
-    "lib": ["dom", "es5", "es2015", "scripthost"],
+    "lib": ["dom", "es5", "es2016", "scripthost"],
     "module": "amd",
     "moduleResolution": "classic",
     "noUnusedLocals": true,
