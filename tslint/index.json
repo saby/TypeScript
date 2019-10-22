@@ -66,9 +66,6 @@
         "no-this-assignment": {
           "severity": "warning"
         },
-        "no-unnecessary-type-assertion": {
-            "severity": "warning"
-        },
         "no-var-requires": true,
         "object-literal-key-quotes": [true, "as-needed"],
         "object-literal-sort-keys": false,
@@ -76,10 +73,6 @@
         "ordered-imports": false,
         "prefer-for-of": false,
         "prefer-object-spread": true,
-        "promise-function-async": true,
-        "restrict-plus-operands": {
-          "severity": "warning"
-        },
         "quotemark": [true, "single", "avoid-escape", "avoid-template"],
         "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
         "typedef": [
