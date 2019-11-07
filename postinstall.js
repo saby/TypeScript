@@ -1,7 +1,6 @@
 const spawn = require('child_process').spawn;
 const fs = require('fs');
 const path = require('path');
-const config = require('./package.json');
 const logger = console;
 
 /**
@@ -40,20 +39,22 @@ async function exec(command, ...arguments) {
  * Creates tslib.js by read node_modules/tslib/tslib.js and wrap its contents into a self-call function
  */
 async function wrapTslib() {
-    const source = 'node_modules/tslib/tslib.js';
-    const target = 'tslib.js';
-
     return new Promise((resolve, reject) => {
-        logger.log(`Writing: ${path.resolve(target)}`);
+        const source = require.resolve('tslib/tslib.js');
+        const target = path.resolve('tslib.js');
+
+        logger.log(`Writing: ${target} taken from ${source}`);
         try {
+            const config = require(path.join(path.dirname(source), 'package.json'));
+
             fs.readFile(source, (readErr, contents) => {
                 if (readErr) {
                     reject(readErr);
                 }
                 const result = `/**
- * This is a runtime library for TypeScript that contains all of the TypeScript helper functions.
- * Version ${config.dependencies.tslib}
- * https://www.npmjs.com/package/tslib
+ * ${config.description}
+ * Version: ${config.version}
+ * URL: ${config.repository.url}
  */
 (function() {
 ${String(contents)}
