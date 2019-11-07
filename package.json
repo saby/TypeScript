@@ -17,12 +17,11 @@
    "author": "Aleksey Maltsev",
    "license": "MIT",
    "scripts": {
-      "postinstall": "node postinstall.js"
+       "postinstall": "tsc -p tslint/custom-rules 2>&1 || echo done"
    },
    "dependencies": {
-      "@types/node": "12.12.6",
-      "tslint": "5.20.1",
-      "tslib": "1.10.0",
-      "typescript": "3.7.2"
+      "@types/node": "12.7.5",
+      "tslint": "5.20.0",
+      "typescript": "3.5.3"
    }
 }
