@@ -22,9 +22,15 @@ You should replace `x.x.xxx` with actual version. For example, `3.18.700`.
 ```json
 "scripts": {
   "build": "saby-typescript --install",
-  "compile": "saby-typescript --compile"
+  "compile": "saby-typescript --compiler"
+  "lint": "saby-typescript --lint"
 }
 ```
+What are these scripts doing?
+
+- *build* - builds your project infrastructure
+- *compile* - compiles TypeScript files
+- *lint* - runs static analysis
 
 It's almost ready now!
 
@@ -37,7 +43,6 @@ Also build your environment:
 ```bash
 npm run build
 ```
-
 
 ## How to use
 
@@ -109,16 +114,6 @@ Basically you have two strategies to use code from your dependencies with non-re
     import Record from 'saby-types/entity';
     ```
 
-### How to define custom name for AMD module?
-
-Use slash directive [amd-module](https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html#-amd-module-):
-
-```typescript
-/// <amd-module name="NameOf/Your/Amd/Module" />
-```
-
-Compilator will put given module name into `define()` function for this module and everywhere this module is used for import in AMD representation.
-
 ### How to import AMD module into TypeScript module?
 
 Use `import` as usual:
@@ -136,6 +131,12 @@ import someAmdModule = require('NameOf/Some/Amd/Module');
 In common case this imported module will be like "black box" for TypeScript interpreter so you should define a type of it if you want to work well with it.
 
 If you plan to create inherited class from imported AMD class you will possible have a problems with static class members. The inheritance chain with only TypeScript classes is preferred.
+
+## Programmatic usage
+
+The next modules are avaliable:
+- *'saby-typescript/lib/compiler'* - alias for 'typescript'
+- *'saby-typescript/lib/lint'* - alias for 'tslint'
 
 ## Any questions?
 
