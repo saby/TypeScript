@@ -3,18 +3,18 @@ const path = require('path');
 const spawn = require('child_process').spawn;
 
 const argv = process.argv.slice(2);
-let command;
-let args;
+let command = '';
+let args = [];
 argv.forEach((arg, index) => {
    const [name, value] = arg.split('=', 2);
    switch (name) {
       case '--install':
          command = 'install.js';
-         args = argv.slice(index);
+         args = argv.slice(1 + index);
          break;
       case '--compile':
          command = 'compile.js';
-         args = argv.slice(index);
+         args = argv.slice(1 + index);
          break;
    }
 });
@@ -31,7 +31,7 @@ const proc = spawn(
 
 // Wait for exit
 proc.on('exit', (code, signal) => {
-   process.on('exit', function() {
+   process.on('exit', () => {
       if (signal) {
          process.kill(process.pid, signal);
       } else {
