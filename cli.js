@@ -16,6 +16,10 @@ argv.forEach((arg, index) => {
          command = 'compile.js';
          args = argv.slice(1 + index);
          break;
+       case '--lint':
+           command = 'lint.js';
+           args = argv.slice(1 + index);
+           break;
    }
 });
 
