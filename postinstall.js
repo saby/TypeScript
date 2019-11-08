@@ -74,7 +74,7 @@ ${String(contents)}
 
 async function postinstall() {
     await wrapTslib();
-    await exec('node', 'cli/compile', '-p', 'tslint/custom-rules').catch((err) => {
+    await exec('node', 'cli/compiler', '-p', 'tslint/custom-rules').catch((err) => {
         logger.warn(err.message);
     });
 }
