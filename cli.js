@@ -4,22 +4,16 @@ const spawn = require('child_process').spawn;
 
 const argv = process.argv.slice(2);
 let command = '';
+let commands = ['install', 'compiler', 'lint'];
 let args = [];
 argv.forEach((arg, index) => {
-   const [name, value] = arg.split('=', 2);
-   switch (name) {
-      case '--install':
-         command = 'install.js';
-         args = argv.slice(1 + index);
-         break;
-      case '--compile':
-         command = 'compile.js';
-         args = argv.slice(1 + index);
-         break;
-       case '--lint':
-           command = 'lint.js';
+   const [preName, value] = arg.split('=', 2);
+   if (String(preName).substr(0, 2) === '--') {
+       const name = preName.substr(2);
+       if (commands.indexOf(name) > -1) {
+           command = `cli/${name}.js`;
            args = argv.slice(1 + index);
-           break;
+       }
    }
 });
 
