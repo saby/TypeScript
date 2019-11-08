@@ -1,7 +1,9 @@
 {
     "extends": "tslint:recommended",
+    "rulesDirectory": "./custom-rules/",
     "jsRules": true,
     "rules": {
+        "doc-library-includes": true,
         "ban-comma-operator": true,
         "ban-ts-ignore": {
             "severity": "warning"
