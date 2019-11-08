@@ -22,7 +22,7 @@ You should replace `x.x.xxx` with actual version. For example, `3.18.700`.
 ```json
 "scripts": {
   "build": "saby-typescript --install",
-  "compile": "tsc"
+  "compile": "saby-typescript --compile"
 }
 ```
 
