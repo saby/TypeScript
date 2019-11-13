@@ -81,7 +81,6 @@
             "parameter",
             "property-declaration",
             "member-variable-declaration",
-            "object-destructuring",
             "array-destructuring"
         ],
         "typedef-whitespace": [true, {
