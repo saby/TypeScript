@@ -13,7 +13,6 @@
       "Transport/*": ["WS.Core/transport/*"]
     },
     "target": "es5",
-    "typeRoots" : ["node_modules/@types"],
     "types" : ["requirejs"]
   }
 }
