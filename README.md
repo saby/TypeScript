@@ -4,6 +4,7 @@ This environment provides basic setup for [TypeScript](https://www.typescriptlan
 
 ## How to include in your own project
 
+
 **Firstly**. Your project must [follow npm architecture](https://docs.npmjs.com/cli/init). You need to [Node.js](https://nodejs.org/) being installed on your computer. The easiest first step to start is execute this command:
 ```bash
 npm init
