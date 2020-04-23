@@ -50,10 +50,10 @@ You can use additional command line arguments to set this tool up more precisely
 
 Arguments to use with `install`:
 
-- `mode=production|developer` - provides the installation mode:
+- `mode=production|development` - provides the installation mode:
 
     * `production` (default) is common mode for build an application;
-    * `developer` is for local development which provides more opportunities such as special types for unit testing framework;
+    * `development` is for local development which provides more opportunities such as special types for unit testing framework;
 
 - `tsconfig` - provides specific target file name for *tsconfig.json* (e.g. *--tsconfig=src/tsconfig.json*);
 - `tslib` - provides specific target file name for *tslib.js* (e.g. *--tslib=src/tslib.js*);
