@@ -55,6 +55,7 @@ function getArgs() {
          args[name] = value;
       }
    });
+   return args;
 }
 
 const config = getArgs();
