@@ -59,12 +59,12 @@ function getArgs() {
 }
 
 const config = getArgs();
-const isDeveloperMode = config.mode === 'developer';
+const isDevelopmentMode = config.mode === 'development';
 
 // Processing CLI arguments into options
 const options = {
    tsconfig: {
-      source: isDeveloperMode ? 'configs/es5.json' : 'configs/es5.dev.json',
+      source: isDevelopmentMode ? 'configs/es5.dev.json' : 'configs/es5.json',
       target: 'tsconfig.json',
       link: true,
       default: true
@@ -84,8 +84,8 @@ const options = {
 };
 
 Object.keys(config).forEach(name => {
-   const value = config[name];
    if (name in options) {
+      const value = config[name];
       options[name].target = value;
       options[name].default = true;
 
