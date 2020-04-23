@@ -46,10 +46,24 @@ async function copyWithPostProcessing(source, target, config, data) {
    }
 }
 
+function getArgs() {
+   const args = {};
+   process.argv.slice(2).forEach(arg => {
+      const [param, value] = arg.split('=', 2);
+      if (param.startsWith('--')) {
+         const name = param.substr(2);
+         args[name] = value;
+      }
+   });
+}
+
+const config = getArgs();
+const isDeveloperMode = config.mode === 'developer';
+
 // Processing CLI arguments into options
 const options = {
    tsconfig: {
-      source: 'configs/es5.json',
+      source: isDeveloperMode ? 'configs/es5.json' : 'configs/es5.dev.json',
       target: 'tsconfig.json',
       link: true,
       default: true
@@ -67,18 +81,16 @@ const options = {
       default: true
    }
 };
-process.argv.slice(2).forEach(arg => {
-   const [param, value] = arg.split('=', 2);
-   if (param.startsWith('--')) {
-      const name = param.substr(2);
-      if (name in options) {
-         options[name].target = value;
-         options[name].default = true;
 
-         // Prevent copy for WS postinstall script
-         if (name === 'tslib' && value === 'WS.Core/ext/tslib.js') {
-            options[name].link = false;
-         }
+Object.keys(config).forEach(name => {
+   const value = config[name];
+   if (name in options) {
+      options[name].target = value;
+      options[name].default = true;
+
+      // Prevent copy for WS postinstall script
+      if (name === 'tslib' && value === 'WS.Core/ext/tslib.js') {
+         options[name].link = false;
       }
    }
 });

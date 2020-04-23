@@ -13,10 +13,10 @@ You have to answer several simple questions. After that you'll have the new file
 **Secondly**. Add dependency in your `package.json` file at `dependencies` section like this:
 ```json
 "devDependencies": {
-  "saby-typescript": "git+https://github.com:saby/TypeScript.git#rc-x.x.xxx"
+  "saby-typescript": "git+https://github.com:saby/TypeScript.git#rc-xx.yyyy"
 }
 ```
-You should replace `x.x.xxx` with actual version. For example, `3.18.700`. 
+You should replace `xx.yyyy` with actual version. For example, `20.4000`. 
 
 **Thirdly**. Also add a pair of scripts at `scripts` section like this:
 ```json
@@ -28,9 +28,9 @@ You should replace `x.x.xxx` with actual version. For example, `3.18.700`.
 ```
 What are these scripts doing?
 
-- *build* - builds your project infrastructure
-- *compile* - compiles TypeScript files
-- *lint* - runs static analysis
+- `build` - builds your project infrastructure
+- `compile` - compiles TypeScript files
+- `lint` - runs static analysis
 
 It's almost ready now!
 
@@ -43,6 +43,21 @@ Also build your environment:
 ```bash
 npm run build
 ```
+
+## Advanced usage
+
+You can use additional command line arguments to set this tool up more precisely.
+
+Arguments to use with `install`:
+
+- `mode=production|developer` - provides the installation mode:
+
+    * `production` (default) is common mode for build an application;
+    * `developer` is for local development which provides more opportunities such as special types for unit testing framework;
+
+- `tsconfig` - provides specific target file name for *tsconfig.json* (e.g. *--tsconfig=src/tsconfig.json*);
+- `tslib` - provides specific target file name for *tslib.js* (e.g. *--tslib=src/tslib.js*);
+- `tslint` - provides specific target file name for *tslint.json* (e.g. *--tslint=src/tslint.json*).
 
 ## How to use
 
