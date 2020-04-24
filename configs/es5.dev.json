@@ -1,4 +1,3 @@
-
 {
   "extends": "./node_modules/saby-typescript/configs/es5.json",
   "compilerOptions": {
