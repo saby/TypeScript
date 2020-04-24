@@ -10,7 +10,10 @@
     "paths": {
       "Core/*": ["WS.Core/core/*"],
       "Lib/*": ["WS.Core/lib/*"],
-      "Transport/*": ["WS.Core/transport/*"]
+      "Transport/*": ["WS.Core/transport/*"],
+      "json!*": ["WS.Core/global"],
+      "tmpl!*": ["WS.Core/global"],
+      "wml!*": ["WS.Core/global"]
     },
     "target": "es5",
     "types" : ["requirejs"]

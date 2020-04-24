@@ -5,5 +5,8 @@
     "baseUrl": "./application",
     "outDir": "./application",
     "types": ["mocha", "requirejs"]
-  }
+  },
+  "exclude": [
+    "build-ui"
+  ]
 }
