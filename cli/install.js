@@ -87,7 +87,7 @@ Object.keys(config).forEach(name => {
    if (name in options) {
       const value = config[name];
       options[name].target = value;
-      options[name].default = true;
+      options[name].default = value === 'skip' ? false : true;
 
       // Prevent copy for WS postinstall script
       if (name === 'tslib' && value === 'WS.Core/ext/tslib.js') {
