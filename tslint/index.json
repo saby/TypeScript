@@ -51,6 +51,9 @@
         },
         "no-empty-interface": true,
         "no-magic-numbers": {
+            "options": {
+                "allowed-numbers": [-1, 0, 1, 2]
+            },
             "severity": "warning"
         },
         "no-namespace": true,
