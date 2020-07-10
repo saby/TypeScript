@@ -117,7 +117,7 @@ Object.keys(options).forEach((param) => {
    const sourceFile = option.source;
    const targetFile = option.target;
    const sourcePath = path.join(source, sourceFile);
-   const targetPath = path.join(target, targetFile);
+   const targetPath = path.isAbsolute(targetFile) ? targetFile : path.join(target, targetFile);
    let message = `copying '${sourcePath}' to '${targetPath}'`;
 
    copyWithPostProcessing(sourcePath, targetPath, option, data).then(() => {
