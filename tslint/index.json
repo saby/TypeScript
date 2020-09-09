@@ -77,6 +77,7 @@
         "prefer-for-of": false,
         "prefer-object-spread": true,
         "quotemark": [true, "single", "avoid-escape", "avoid-template"],
+        "semicolon": [true, "always", "ignore-bound-class-methods"],
         "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
         "typedef": [
             true,
