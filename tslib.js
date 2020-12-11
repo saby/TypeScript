@@ -150,7 +150,7 @@ var __createBinding;
     };
 
     __exportStar = function(m, o) {
-        for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding(o, m, p);
+        for (var p in m) if (!Object.prototype.hasOwnProperty.call(o, p)) __createBinding(o, m, p);
     };
 
     __createBinding = Object.create ? (function(o, m, k, k2) {
