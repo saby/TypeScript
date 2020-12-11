@@ -6,6 +6,7 @@
     "lib": ["dom", "es5", "es2016", "es2017.object", "es2017.string", "es2018.promise", "scripthost"],
     "module": "amd",
     "moduleResolution": "classic",
+    "esModuleInterop": true,
     "noUnusedLocals": true,
     "paths": {
       "Core/*": ["WS.Core/core/*"],
