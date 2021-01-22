@@ -1,6 +1,6 @@
 {
    "name": "saby-typescript",
-   "version": "21.1100.0",
+   "version": "21.1000.0",
    "description": "Saby's environment for TypeScript",
    "bin": {
       "saby-typescript": "./cli.js"
