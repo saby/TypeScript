@@ -1,0 +1,20 @@
+name: 'TSLint checks'
+description: 'GitHub action that lints your code with TSLint (with Annotation support)'
+author: 'Zimichev Dmitri'
+inputs:
+  token:
+    description: 'Github Token'
+    required: true
+  project:
+    description: 'Path of TypeScript Project file'
+  config:
+    description: 'Path of TSLint configuration'
+    default: 'tslint.json'
+  pattern:
+    description: 'Glob pattern to match'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'code'
+  color: 'blue'
