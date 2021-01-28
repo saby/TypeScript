@@ -11,4 +11,4 @@ RUN npm ci --production
 COPY entrypoint.sh index.js /var/task/
 
 RUN chmod +x /var/task/entrypoint.sh
-ENTRYPOINT ["/var/task/entrypoint.sh"]
+ENTRYPOINT ["sh", "/var/task/entrypoint.sh"]
