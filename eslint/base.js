@@ -3,7 +3,7 @@
 const restrictedGlobals = require('confusing-browser-globals');
 const es6Rules = require('./impl/es6-rules');
 
-// конфигурация, которая применима к любому JS коду в компании: код es5, es6+, node.js
+// Configuration for any JS code: es5, es6+, node.js
 module.exports = {
    parserOptions: {
       ecmaVersion: 9,
@@ -22,7 +22,7 @@ module.exports = {
    },
    rules: {
 
-      // Раздел Possible Errors
+      // Possible Errors
       'for-direction': 'error',
       'getter-return': ['error', { allowImplicit: true }],
       'no-await-in-loop': 'error',
@@ -58,7 +58,7 @@ module.exports = {
       'valid-jsdoc': 'off',
       'valid-typeof': ['error', { requireStringLiterals: true }],
 
-      // Раздел Best Practices
+      // Best Practices
       'accessor-pairs': 'off',
       'array-callback-return': ['error', { allowImplicit: true }],
       'block-scoped-var': 'error',
@@ -158,10 +158,10 @@ module.exports = {
       'wrap-iife': ['error', 'any'],
       yoda: 'off',
 
-      // Раздел Strict Mode
+      // Strict Mode
       strict: 'off',
 
-      // Раздел Variables
+      // Variables
       'init-declarations': 'off',
       'no-delete-var': 'error',
       'no-label-var': 'error',
@@ -174,8 +174,8 @@ module.exports = {
       'no-unused-vars': ['error', { vars: 'all', args: 'after-used', ignoreRestSiblings: true }],
       'no-use-before-define': ['error', { functions: false, classes: true, variables: true }],
 
-      // Раздел Node.js and CommonJS
-      // задаются в конфигурации ./node.js
+      // Node.js and CommonJS
+      // Settings are in ./node.js
       'callback-return': 'off',
       'global-require': 'off',
       'handle-callback-err': 'off',
@@ -188,7 +188,7 @@ module.exports = {
       'no-restricted-modules': 'off',
       'no-sync': 'off',
 
-      // Раздел Stylistic Issues
+      // Stylistic Issues
       'array-bracket-newline': 'off',
       'array-bracket-spacing': ['warn', 'never'],
       'array-element-newline': ['warn', 'consistent'],
@@ -396,10 +396,9 @@ module.exports = {
       'unicode-bom': ['error', 'never'],
       'wrap-regex': 'off',
 
-      // Раздел ECMAScript 6
+      // ECMAScript 6
       //---------------------
-      // проверки, которые провоцируют писать код, не совместимый с ES5,
-      // задаются в конфигурации ./es6.js
+      // Settings that encourage us to write code incompatible with ES5 are in ./es6.js
       'arrow-body-style': [
          'warn',
          'as-needed',

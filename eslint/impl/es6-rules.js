@@ -1,6 +1,6 @@
 'use strict';
 
-// объект rules для ES6 кода
+// Rules for ES6 code
 module.exports = {
    'no-restricted-properties': ['warn',
       {

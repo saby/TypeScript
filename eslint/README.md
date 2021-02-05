@@ -1,25 +1,23 @@
-# @tensor-corp/eslint-config
+Here are different configurations for ESLint (.eslintrc):
 
-Пакет предоставляет shareable конфигурации ESLint (.eslintrc) компании Тензор:
+* "base" - configuration that is suitable for any js code  (ES3, ES5, ES6+, node.js, unit tests).
+* "es6" - configuration that forces you to use ES6+ (for example, const и let instead of var).
+Inherited from "base".
+* "node" - configuration for node.js projects.
+Inherited from "es6".
 
-* "@tensor-corp" или "@tensor-corp/eslint-config/base" - конфигурация, которая может быть применима к широкому спектру JS кода (ES3, ES5, ES6+, node.js, unit tests).
-* "@tensor-corp/eslint-config/es6" - конфигурация, которая заставляет использовать новый синтаксис ES6+ (например, const и let вместо var).
-Наследуется от "@tensor-corp/eslint-config/base".
-* "@tensor-corp/eslint-config/node" - конфигурация для node.js проектов.
-Наследуется от "@tensor-corp/eslint-config/es6".
+## Usage
 
-## Использование
-
-Установите пакет и укажите в файле ".eslintrc" строки:
+Install package and append the following lines to ".eslintrc":
 
         {
-            "extends": "@tensor-corp"
+            "extends": "./node_modules/eslint/base"
         }
 
-или, например,
+or
 
         {
-            "extends": "@tensor-corp/eslint-config/node"
+            "extends": "./node_modules/eslint/node"
         }
 
-Можно дополнительно [переопределить отдельные поля в конфигурации](https://eslint.org/docs/user-guide/getting-started).
+Also you can override some settings in configuration (https://eslint.org/docs/user-guide/getting-started).

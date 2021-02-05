@@ -2,7 +2,7 @@
 
 const es6Rules = require('./impl/es6-rules');
 
-// конфигурация, которая заставляет использовать новый синтаксис ES6+
+// Configuration that forces us to use ES6+
 module.exports = {
    extends: './base.js',
    parserOptions: {
