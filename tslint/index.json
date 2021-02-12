@@ -76,7 +76,7 @@
         "ordered-imports": false,
         "prefer-for-of": false,
         "prefer-object-spread": true,
-        "quotemark": [true, "single", "avoid-escape", "avoid-template"],
+        "quotemark": [true, "single", "avoid-escape", "avoid-template", "jsx-double"],
         "semicolon": [true, "always", "ignore-bound-class-methods"],
         "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
         "typedef": [
@@ -84,8 +84,7 @@
             "call-signature",
             "parameter",
             "property-declaration",
-            "member-variable-declaration",
-            "array-destructuring"
+            "member-variable-declaration"
         ],
         "typedef-whitespace": [true, {
             "call-signature": "nospace",

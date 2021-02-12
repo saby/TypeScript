@@ -11,13 +11,13 @@ Inherited from "es6".
 Install package and append the following lines to ".eslintrc":
 
         {
-            "extends": "./node_modules/eslint/base"
+            "extends": "./node_modules/saby-typescript/eslint/base"
         }
 
 or
 
         {
-            "extends": "./node_modules/eslint/node"
+            "extends": "./node_modules/saby-typescript/eslint/node"
         }
 
 Also you can override some settings in configuration (https://eslint.org/docs/user-guide/getting-started).
